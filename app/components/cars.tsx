@@ -2,11 +2,6 @@ import { sql } from "@vercel/postgres";
 
 export default async function Cars() {
 
-    // const courses = [
-    //     { title: "Curso de HTML", url: "/img/html.svg", description: "O curso é realizado por..." },
-    //     { title: "Curso de CSS", url: "/img/css.svg", description: "O curso CSS é realizado por..." },
-    //     { title: "Curso de JS", url: "/img/js.svg", description: "O curso JSS é realizado por..." }
-    // ]
     const { rows } = await sql`SELECT * from cars`;
     console.log(rows)
     return (
@@ -22,7 +17,7 @@ export default async function Cars() {
                         <div key={cars.id} className="bg-[#4d4d4d] rounded-md pb-2">
                             <a href="/cars.html">
                                 <div className="text-white text-center">
-                                    <h3>{cars.brand}L</h3>
+                                    <h3>{cars.brand}</h3>
                                     <p>{cars.model}</p>
                                 </div>
                             </a>
